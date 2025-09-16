@@ -43,6 +43,13 @@ namespace IISControl.Vistas
             }
             //Primero debemos de crear la carpeta física
             string[] archivosXml = Directory.GetFiles(txt_pathDirectory.Text, "*.xml", SearchOption.AllDirectories);
+
+            if (archivosXml.Length <= 0)
+            {
+                MessageBox.Show("No se detectaron archivos");
+                return;
+            }
+
             string archivos = string.Empty;
 
             //Arreglos de almacenamiento
